@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2026-02-03 20:25:01 / Modified: 21:10:54" itemprop="dateCreated datePublished" datetime="2026-02-03T20:25:01+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 20:25:01 / Modified: 21:26:53" itemprop="dateCreated datePublished" datetime="2026-02-03T20:25:01+08:00">2026-02-03</time>
             </span>
 
           
@@ -201,6 +201,7 @@
 
       
           <p>Hello! This is my first blog.</p>
+<p>&#96;&#96;</p>
 <p><img src="/../images/hello/image-20260203211047913.png" alt="image-20260203211047913"></p>
 
       
@@ -221,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-3/">
+    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -235,7 +236,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2026/02/03/OS-chapter-3/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 3-非连续内存</a>
+            <a href="/2026/02/03/OS-chapter-1/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 1-概论</a>
         </h2>
 
         <div class="post-meta">
@@ -246,7 +247,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:18:20" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:16:58" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,53 +270,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。</p>
-<p><strong>非连续内存分配管理方法</strong>：（硬件方法）</p>
+          <h2 id="操作系统的启动"><a href="#操作系统的启动" class="headerlink" title="操作系统的启动"></a>操作系统的启动</h2><p><img src="/../images/OS-chapter-1/image-20260203195241791.png" alt="image-20260203195241791"></p>
 <ul>
-<li>分段</li>
-<li>分页（用得多）</li>
+<li><p><strong>DISK</strong>：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。</p>
+</li>
+<li><p><strong>BIOS</strong>：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。</p>
+</li>
+<li><p><strong>Bootloader</strong>：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。&#96;&#96;</p>
+</li>
 </ul>
-<h2 id="1-分段（Segmentation）"><a href="#1-分段（Segmentation）" class="headerlink" title="1.分段（Segmentation）"></a>1.分段（Segmentation）</h2><p><strong>1.程序的分段地址空间</strong></p>
-<p>把程序的代码、数据等分段，分散到多个物理空间。这种方式虽然让程序在逻辑地址上连续，但是在物理地址上是分开的。</p>
-<p><img src="/../images/OS-chapter-3/image-20251204100228758.png" alt="image-20251204100228758"></p>
-<p><strong>2.分段寻址方案</strong></p>
-<p> 应用程序的地址是一维的逻辑地址。一维的逻辑地址需要和物理地址对应。</p>
-<p>一维逻辑地址由不同的段组成，将一维的地址分为两块，一块是段寻址，一块是段内偏移寻址。</p>
-<p>如果段号和段内偏移是分开的两个地址，则称为段寄存器+地址寄存器实现方案。如果合在一起，则称为单地址实现方案。</p>
-<p><img src="/../images/OS-chapter-3/image-20251204101138549.png" alt="image-20251204101138549"></p>
-<p><img src="/../images/OS-chapter-3/image-20251204101440168.png" alt="image-20251204101440168"></p>
-<p><strong>段表中存放着逻辑地址与物理地址的映射关系和段的起始地址以及长度。</strong></p>
-<p>当通过段号寻址到物理内存中的起始地址之后，CPU会比对该地址是否满足段表的限制（起始地址和长度），若不满足限制，说明超出了访问范围。</p>
-<h2 id="2-分页（Paging）"><a href="#2-分页（Paging）" class="headerlink" title="2.分页（Paging）"></a>2.分页（Paging）</h2><p><strong>1.分页地址空间</strong></p>
-<p>通过2的幂来划分物理内存至固定大小的帧，逻辑机制空间应该和物理地址空间具有相同大小的页。</p>
-<p>注意：物理页称作帧，逻辑页称作页。</p>
-<p><strong>帧</strong>：（frame）</p>
-<p>假设每一帧有S个字节，那么帧内偏移就有S位。</p>
-<p><img src="/../images/OS-chapter-3/image-20251204112128892.png" alt="image-20251204112128892"></p>
-<p>地址计算的实例：有16bit的地址空间，9bit大小的页帧，假设物理地址的帧号是3，偏移地址是6，求实际的物理地址。</p>
-<p>​	9bit大小的页帧，则偏移量有2^9&#x3D;512byte。</p>
-<p>根据公式：物理地址&#x3D;2^9 * 3 + 6&#x3D; 1542</p>
-<p><strong>页</strong>：（page）</p>
-<p>一个程序的逻辑地址被划分为大小相等的页</p>
-<p>页内偏移的大小等于帧内偏移的大小</p>
-<p>页的大小和页帧大小一样</p>
-<p>页号的大小不一定等于帧号大小</p>
-<p><img src="/../images/OS-chapter-3/image-20251204135108338.png" alt="image-20251204135108338"></p>
-<p><strong>2.页寻址方案</strong></p>
-<p>程序运行时，CPU先寻址（逻辑地址），针对逻辑地址的页号部分，查询页表中对应页号的帧号，从而映射到物理地址。 </p>
-<h2 id="3-页表（Page-Table）"><a href="#3-页表（Page-Table）" class="headerlink" title="3.页表（Page Table）"></a>3.页表（Page Table）</h2><p>可以简单理解为页表就是个大数组。</p>
-<p>页表的索引指的是page number，即页号。</p>
-<p>索引所对应页表项中存放着frame number。</p>
-<p>CPU先查询页表的起始地址，查询page number算出index，再寻址到对应的页表项，从而取出frame number，frame number叠加上offset就形成了物理地址。</p>
-<p>页表项除存放frame number以外还会存一些bit，这些bit可以用于表示页表项是否合法（对应物理页是否存在）。</p>
-<p>逻辑地址空间大小不一，有可能有一部分逻辑地址空间并没有对应到物理地址空间。</p>
-<p><img src="/../images/OS-chapter-3/image-20251215142205802.png" alt="image-20251215142205802"></p>
-<p><strong>地址转换</strong></p>
-<p>​	CPU先找逻辑地址，查找 (4,0) ，从低往高第五个页表，偏移量为0。查询到该页表项中有标志位和相应的帧号，帧号为00000，标志位为100。标志位的第二项就是上文所说的bit，0表示不存在对应的物理地址，反之1表示存在。可见逻辑地址 (4,0) 所对应的物理地址不存在，如果CPU访问到这个地址空间就会发出异常。</p>
-<p>​	再查找 (3，1023) 这个逻辑地址，从低往高第四个页表，偏移量为1023。CPU查询到对应的标志位和帧号分别为 011 00100。说明对应物理地址存在，并且对应到物理地址中的页帧号是4。物理地址中从低到高第五个页表，并且页帧的偏移量与页的偏移量同为1023。成功对应上了物理地址。</p>
-<p><img src="/../images/OS-chapter-3/image-20251215143615405.png" alt="image-20251215143615405"></p>
-<p><strong>分页机制的性能问题</strong></p>
-<p>​	访问一个内存单元需要进行两次内存访问，一次获取页表项，一次用于访问数据。</p>
+<p><img src="/../images/OS-chapter-1/image-20260203195259231.png" alt="image-20260203195259231"></p>
+<p><strong>BOIS</strong>会在内存的特定地址开始执行。</p>
+<p>上电之后<strong>BOIS</strong>需要执行的操作：</p>
+<ol>
+<li><strong>POST</strong>（加电自检），检查设备是否能正常工作。</li>
+<li>将<strong>Bootloader</strong>从硬盘放到内存中。</li>
+<li>寻找显卡和执行<strong>BIOS</strong></li>
+</ol>
+<p><img src="/../images/OS-chapter-1/image-20260203195312988.png" alt="image-20260203195312988"></p>
+<p><strong>Bootloader：</strong></p>
+<ul>
+<li>寻找DISK中操作系统的起始扇区和操作系统长度。</li>
+<li>将操作系统对应磁盘块读到内存中。</li>
+<li>将CPU控制权交给OS，跳转到操作系统的起始地址执行。</li>
+</ul>
+<h2 id="操作系统的系统调用、异常、中断"><a href="#操作系统的系统调用、异常、中断" class="headerlink" title="操作系统的系统调用、异常、中断"></a>操作系统的系统调用、异常、中断</h2><p><strong>定义：</strong></p>
+<p>1.系统调用（来源于应用程序）</p>
+<p>​	异步或者同步事件。应用程序主动向操作系统发出服务请求。</p>
+<p>2.异常（来源于不良的应用程序）</p>
+<p>​	同步事件。非法指令或者其他坏的处理状态（如：内存出错），并非程序主动发出的请求。</p>
+<p>3.中断（来源于外设）</p>
+<p>​	异步事件。来自不同硬件设备的计时器和网络中断。</p>
+<p><strong>系统调用、中断和异常的处理机制</strong></p>
+<p><strong>中断：</strong></p>
+<p>​	<strong>硬件：</strong></p>
+<p>​	设置中断标记</p>
+<p>​		1.将内部、外部事件设置中断标记</p>
+<p>​		2.设置中断事件的ID，让操作系统能找到对应的处理程序</p>
+<p>​	<strong>软件</strong>：</p>
+<p>​	1.保存当前的处理状态，当中断服务程序执行完成后回到原来被打断的点。</p>
+<p>​	2.保存完状态后，程序跳转到中断号对应的中断服务程序。</p>
+<p>​	3.清除中断标记</p>
+<p>​	4.恢复原本的处理状态</p>
+<p><strong>异常：</strong></p>
+<p>1.保存现场</p>
+<p>2.异常处理</p>
+<p>​	1.杀死产生异常的程序</p>
+<p>​	2.重新执行异常的程序</p>
+<p>3.恢复现场</p>
+<p><strong>系统调用：</strong></p>
+<p>程序访问只要是通过高层次的API接口而不是直接进行系统调用。Linux，Mac OS等用的是POSIX API，只要遵循这个机制，就可以跨平台使用。</p>
+<p>应用程序会通过Library Code来访问系统调用接口。</p>
+<p>访问到系统调用接口过后会触发操作系统从用户态转换为内核态。</p>
+<p>**用户态：**特权低，无法直接访问特殊的机器指令和IO。</p>
+<p>**内核态：**操作系统运行过程中可以执行任意一条CPU发出的指令，包括特权指令和访问IO的指令。可以完全控制整个计算机系统。</p>
+<p>转换为内核态后，操作系统会识别应用程序发出的系统调用参数、ID号等，并完成具体的服务。</p>
+<p>系统调用和函数调用的区别：</p>
+<p>​	1.函数调用只是在一个栈空间中进行参数的传递，参数的返回</p>
+<p>​	2.系统调用中，应用程序和操作系统内核拥有各自的堆栈。当应用程序发出系统调用后，需要切换堆栈，同时要完成特权转换。</p>
+<p>可见执行系统调用相比于执行函数调用开销要大很多，但是系统调用要可靠得多。</p>
 
       
     </div>
@@ -472,7 +485,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/">
+    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -486,7 +499,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2026/02/03/OS-chapter-1/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 1-概论</a>
+            <a href="/2026/02/03/OS-chapter-3/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 3-非连续内存</a>
         </h2>
 
         <div class="post-meta">
@@ -497,7 +510,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:16:58" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:18:20" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -520,65 +533,53 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="操作系统的启动"><a href="#操作系统的启动" class="headerlink" title="操作系统的启动"></a>操作系统的启动</h2><p><img src="/../images/OS-chapter-1/image-20260203195241791.png" alt="image-20260203195241791"></p>
+          <p>连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。</p>
+<p><strong>非连续内存分配管理方法</strong>：（硬件方法）</p>
 <ul>
-<li><p><strong>DISK</strong>：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。</p>
-</li>
-<li><p><strong>BIOS</strong>：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。</p>
-</li>
-<li><p><strong>Bootloader</strong>：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。&#96;&#96;</p>
-</li>
+<li>分段</li>
+<li>分页（用得多）</li>
 </ul>
-<p><img src="/../images/OS-chapter-1/image-20260203195259231.png" alt="image-20260203195259231"></p>
-<p><strong>BOIS</strong>会在内存的特定地址开始执行。</p>
-<p>上电之后<strong>BOIS</strong>需要执行的操作：</p>
-<ol>
-<li><strong>POST</strong>（加电自检），检查设备是否能正常工作。</li>
-<li>将<strong>Bootloader</strong>从硬盘放到内存中。</li>
-<li>寻找显卡和执行<strong>BIOS</strong></li>
-</ol>
-<p><img src="/../images/OS-chapter-1/image-20260203195312988.png" alt="image-20260203195312988"></p>
-<p><strong>Bootloader：</strong></p>
-<ul>
-<li>寻找DISK中操作系统的起始扇区和操作系统长度。</li>
-<li>将操作系统对应磁盘块读到内存中。</li>
-<li>将CPU控制权交给OS，跳转到操作系统的起始地址执行。</li>
-</ul>
-<h2 id="操作系统的系统调用、异常、中断"><a href="#操作系统的系统调用、异常、中断" class="headerlink" title="操作系统的系统调用、异常、中断"></a>操作系统的系统调用、异常、中断</h2><p><strong>定义：</strong></p>
-<p>1.系统调用（来源于应用程序）</p>
-<p>​	异步或者同步事件。应用程序主动向操作系统发出服务请求。</p>
-<p>2.异常（来源于不良的应用程序）</p>
-<p>​	同步事件。非法指令或者其他坏的处理状态（如：内存出错），并非程序主动发出的请求。</p>
-<p>3.中断（来源于外设）</p>
-<p>​	异步事件。来自不同硬件设备的计时器和网络中断。</p>
-<p><strong>系统调用、中断和异常的处理机制</strong></p>
-<p><strong>中断：</strong></p>
-<p>​	<strong>硬件：</strong></p>
-<p>​	设置中断标记</p>
-<p>​		1.将内部、外部事件设置中断标记</p>
-<p>​		2.设置中断事件的ID，让操作系统能找到对应的处理程序</p>
-<p>​	<strong>软件</strong>：</p>
-<p>​	1.保存当前的处理状态，当中断服务程序执行完成后回到原来被打断的点。</p>
-<p>​	2.保存完状态后，程序跳转到中断号对应的中断服务程序。</p>
-<p>​	3.清除中断标记</p>
-<p>​	4.恢复原本的处理状态</p>
-<p><strong>异常：</strong></p>
-<p>1.保存现场</p>
-<p>2.异常处理</p>
-<p>​	1.杀死产生异常的程序</p>
-<p>​	2.重新执行异常的程序</p>
-<p>3.恢复现场</p>
-<p><strong>系统调用：</strong></p>
-<p>程序访问只要是通过高层次的API接口而不是直接进行系统调用。Linux，Mac OS等用的是POSIX API，只要遵循这个机制，就可以跨平台使用。</p>
-<p>应用程序会通过Library Code来访问系统调用接口。</p>
-<p>访问到系统调用接口过后会触发操作系统从用户态转换为内核态。</p>
-<p>**用户态：**特权低，无法直接访问特殊的机器指令和IO。</p>
-<p>**内核态：**操作系统运行过程中可以执行任意一条CPU发出的指令，包括特权指令和访问IO的指令。可以完全控制整个计算机系统。</p>
-<p>转换为内核态后，操作系统会识别应用程序发出的系统调用参数、ID号等，并完成具体的服务。</p>
-<p>系统调用和函数调用的区别：</p>
-<p>​	1.函数调用只是在一个栈空间中进行参数的传递，参数的返回</p>
-<p>​	2.系统调用中，应用程序和操作系统内核拥有各自的堆栈。当应用程序发出系统调用后，需要切换堆栈，同时要完成特权转换。</p>
-<p>可见执行系统调用相比于执行函数调用开销要大很多，但是系统调用要可靠得多。</p>
+<h2 id="1-分段（Segmentation）"><a href="#1-分段（Segmentation）" class="headerlink" title="1.分段（Segmentation）"></a>1.分段（Segmentation）</h2><p><strong>1.程序的分段地址空间</strong></p>
+<p>把程序的代码、数据等分段，分散到多个物理空间。这种方式虽然让程序在逻辑地址上连续，但是在物理地址上是分开的。</p>
+<p><img src="/../images/OS-chapter-3/image-20251204100228758.png" alt="image-20251204100228758"></p>
+<p><strong>2.分段寻址方案</strong></p>
+<p> 应用程序的地址是一维的逻辑地址。一维的逻辑地址需要和物理地址对应。</p>
+<p>一维逻辑地址由不同的段组成，将一维的地址分为两块，一块是段寻址，一块是段内偏移寻址。</p>
+<p>如果段号和段内偏移是分开的两个地址，则称为段寄存器+地址寄存器实现方案。如果合在一起，则称为单地址实现方案。</p>
+<p><img src="/../images/OS-chapter-3/image-20251204101138549.png" alt="image-20251204101138549"></p>
+<p><img src="/../images/OS-chapter-3/image-20251204101440168.png" alt="image-20251204101440168"></p>
+<p><strong>段表中存放着逻辑地址与物理地址的映射关系和段的起始地址以及长度。</strong></p>
+<p>当通过段号寻址到物理内存中的起始地址之后，CPU会比对该地址是否满足段表的限制（起始地址和长度），若不满足限制，说明超出了访问范围。</p>
+<h2 id="2-分页（Paging）"><a href="#2-分页（Paging）" class="headerlink" title="2.分页（Paging）"></a>2.分页（Paging）</h2><p><strong>1.分页地址空间</strong></p>
+<p>通过2的幂来划分物理内存至固定大小的帧，逻辑机制空间应该和物理地址空间具有相同大小的页。</p>
+<p>注意：物理页称作帧，逻辑页称作页。</p>
+<p><strong>帧</strong>：（frame）</p>
+<p>假设每一帧有S个字节，那么帧内偏移就有S位。</p>
+<p><img src="/../images/OS-chapter-3/image-20251204112128892.png" alt="image-20251204112128892"></p>
+<p>地址计算的实例：有16bit的地址空间，9bit大小的页帧，假设物理地址的帧号是3，偏移地址是6，求实际的物理地址。</p>
+<p>​	9bit大小的页帧，则偏移量有2^9&#x3D;512byte。</p>
+<p>根据公式：物理地址&#x3D;2^9 * 3 + 6&#x3D; 1542</p>
+<p><strong>页</strong>：（page）</p>
+<p>一个程序的逻辑地址被划分为大小相等的页</p>
+<p>页内偏移的大小等于帧内偏移的大小</p>
+<p>页的大小和页帧大小一样</p>
+<p>页号的大小不一定等于帧号大小</p>
+<p><img src="/../images/OS-chapter-3/image-20251204135108338.png" alt="image-20251204135108338"></p>
+<p><strong>2.页寻址方案</strong></p>
+<p>程序运行时，CPU先寻址（逻辑地址），针对逻辑地址的页号部分，查询页表中对应页号的帧号，从而映射到物理地址。 </p>
+<h2 id="3-页表（Page-Table）"><a href="#3-页表（Page-Table）" class="headerlink" title="3.页表（Page Table）"></a>3.页表（Page Table）</h2><p>可以简单理解为页表就是个大数组。</p>
+<p>页表的索引指的是page number，即页号。</p>
+<p>索引所对应页表项中存放着frame number。</p>
+<p>CPU先查询页表的起始地址，查询page number算出index，再寻址到对应的页表项，从而取出frame number，frame number叠加上offset就形成了物理地址。</p>
+<p>页表项除存放frame number以外还会存一些bit，这些bit可以用于表示页表项是否合法（对应物理页是否存在）。</p>
+<p>逻辑地址空间大小不一，有可能有一部分逻辑地址空间并没有对应到物理地址空间。</p>
+<p><img src="/../images/OS-chapter-3/image-20251215142205802.png" alt="image-20251215142205802"></p>
+<p><strong>地址转换</strong></p>
+<p>​	CPU先找逻辑地址，查找 (4,0) ，从低往高第五个页表，偏移量为0。查询到该页表项中有标志位和相应的帧号，帧号为00000，标志位为100。标志位的第二项就是上文所说的bit，0表示不存在对应的物理地址，反之1表示存在。可见逻辑地址 (4,0) 所对应的物理地址不存在，如果CPU访问到这个地址空间就会发出异常。</p>
+<p>​	再查找 (3，1023) 这个逻辑地址，从低往高第四个页表，偏移量为1023。CPU查询到对应的标志位和帧号分别为 011 00100。说明对应物理地址存在，并且对应到物理地址中的页帧号是4。物理地址中从低到高第五个页表，并且页帧的偏移量与页的偏移量同为1023。成功对应上了物理地址。</p>
+<p><img src="/../images/OS-chapter-3/image-20251215143615405.png" alt="image-20251215143615405"></p>
+<p><strong>分页机制的性能问题</strong></p>
+<p>​	访问一个内存单元需要进行两次内存访问，一次获取页表项，一次用于访问数据。</p>
 
       
     </div>
