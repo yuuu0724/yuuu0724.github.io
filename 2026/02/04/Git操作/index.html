@@ -20,25 +20,21 @@
     var CONFIG = {"hostname":"iamalaric.us.kg","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="操作系统的启动 DISK：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。  BIOS：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。  Bootloader：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。">
+  <meta name="description" content="Git push文件操作1.生成密钥,运行下列命令一路回车1ssh-keygen -t rsa  在.ssh文件夹中打开id_rsa.pub，复制全部内容到GitHub的ssh配置中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统笔记-Chapter 1-概论">
-<meta property="og:url" content="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/index.html">
+<meta property="og:title" content="Git push文件操作">
+<meta property="og:url" content="https://iamalaric.us.kg/2026/02/04/Git%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Alaric&#39;s space">
-<meta property="og:description" content="操作系统的启动 DISK：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。  BIOS：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。  Bootloader：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。">
+<meta property="og:description" content="Git push文件操作1.生成密钥,运行下列命令一路回车1ssh-keygen -t rsa  在.ssh文件夹中打开id_rsa.pub，复制全部内容到GitHub的ssh配置中">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-1/image-20260203195241791.png">
-<meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-1/image-20260203195259231.png">
-<meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-1/image-20260203195312988.png">
-<meta property="article:published_time" content="2026-02-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-02-04T02:08:58.458Z">
+<meta property="article:published_time" content="2026-02-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-04T03:09:55.788Z">
 <meta property="article:author" content="Alaric">
-<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="Git">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://iamalaric.us.kg/images/OS-chapter-1/image-20260203195241791.png">
 
-<link rel="canonical" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/">
+<link rel="canonical" href="https://iamalaric.us.kg/2026/02/04/Git%E6%93%8D%E4%BD%9C/">
 
 
 <script id="page-configurations">
@@ -51,7 +47,7 @@
   };
 </script>
 
-  <title>操作系统笔记-Chapter 1-概论 | Alaric's space</title>
+  <title>Git push文件操作 | Alaric's space</title>
   
 
 
@@ -172,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/">
+    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/04/Git%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -185,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          操作系统笔记-Chapter 1-概论
+          Git push文件操作
         </h1>
 
         <div class="post-meta">
@@ -194,23 +190,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2026-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-04 00:00:00 / Modified: 11:09:55" itemprop="dateCreated datePublished" datetime="2026-02-04T00:00:00+08:00">2026-02-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-02-04 10:08:58" itemprop="dateModified" datetime="2026-02-04T10:08:58+08:00">2026-02-04</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
                 </span>
             </span>
 
@@ -227,7 +217,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.1k</span>
+              <span>414</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -246,67 +236,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="操作系统的启动"><a href="#操作系统的启动" class="headerlink" title="操作系统的启动"></a>操作系统的启动</h2><ul>
-<li><p><strong>DISK</strong>：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。</p>
-</li>
-<li><p><strong>BIOS</strong>：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。</p>
-</li>
-<li><p><strong>Bootloader</strong>：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。</p>
+        <h1 id="Git-push文件操作"><a href="#Git-push文件操作" class="headerlink" title="Git push文件操作"></a>Git push文件操作</h1><h2 id="1-生成密钥-运行下列命令一路回车"><a href="#1-生成密钥-运行下列命令一路回车" class="headerlink" title="1.生成密钥,运行下列命令一路回车"></a>1.生成密钥,运行下列命令一路回车</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<p>在.ssh文件夹中打开id_rsa.pub，复制全部内容到GitHub的ssh配置中</p>
 <span id="more"></span>
 
-<p><img src="/../images/OS-chapter-1/image-20260203195241791.png" alt="image-20260203195241791"></p>
-</li>
-</ul>
-<p><strong>BOIS</strong>会在内存的特定地址开始执行。</p>
-<p>上电之后<strong>BOIS</strong>需要执行的操作：</p>
-<ol>
-<li><strong>POST</strong>（加电自检），检查设备是否能正常工作。</li>
-<li>将<strong>Bootloader</strong>从硬盘放到内存中。</li>
-<li>寻找显卡和执行<strong>BIOS</strong></li>
-</ol>
-<p><img src="/../images/OS-chapter-1/image-20260203195259231.png" alt="image-20260203195259231"></p>
-<p><strong>Bootloader：</strong></p>
-<ul>
-<li>寻找DISK中操作系统的起始扇区和操作系统长度。</li>
-<li>将操作系统对应磁盘块读到内存中。</li>
-<li>将CPU控制权交给OS，跳转到操作系统的起始地址执行。</li>
-</ul>
-<p><img src="/../images/OS-chapter-1/image-20260203195312988.png" alt="image-20260203195312988"></p>
-<h2 id="操作系统的系统调用、异常、中断"><a href="#操作系统的系统调用、异常、中断" class="headerlink" title="操作系统的系统调用、异常、中断"></a>操作系统的系统调用、异常、中断</h2><p><strong>定义：</strong></p>
-<p>1.系统调用（来源于应用程序）</p>
-<p>​	异步或者同步事件。应用程序主动向操作系统发出服务请求。</p>
-<p>2.异常（来源于不良的应用程序）</p>
-<p>​	同步事件。非法指令或者其他坏的处理状态（如：内存出错），并非程序主动发出的请求。</p>
-<p>3.中断（来源于外设）</p>
-<p>​	异步事件。来自不同硬件设备的计时器和网络中断。</p>
-<p><strong>系统调用、中断和异常的处理机制</strong></p>
-<p><strong>中断：</strong></p>
-<p>​	<strong>硬件：</strong></p>
-<p>​	设置中断标记</p>
-<p>​		1.将内部、外部事件设置中断标记</p>
-<p>​		2.设置中断事件的ID，让操作系统能找到对应的处理程序</p>
-<p>​	<strong>软件</strong>：</p>
-<p>​	1.保存当前的处理状态，当中断服务程序执行完成后回到原来被打断的点。</p>
-<p>​	2.保存完状态后，程序跳转到中断号对应的中断服务程序。</p>
-<p>​	3.清除中断标记</p>
-<p>​	4.恢复原本的处理状态</p>
-<p><strong>异常：</strong></p>
-<p>1.保存现场</p>
-<p>2.异常处理</p>
-<p>​	1.杀死产生异常的程序</p>
-<p>​	2.重新执行异常的程序</p>
-<p>3.恢复现场</p>
-<p><strong>系统调用：</strong></p>
-<p>程序访问只要是通过高层次的API接口而不是直接进行系统调用。Linux，Mac OS等用的是POSIX API，只要遵循这个机制，就可以跨平台使用。</p>
-<p>应用程序会通过Library Code来访问系统调用接口。</p>
-<p>访问到系统调用接口过后会触发操作系统从用户态转换为内核态。</p>
-<p>**用户态：**特权低，无法直接访问特殊的机器指令和IO。</p>
-<p>**内核态：**操作系统运行过程中可以执行任意一条CPU发出的指令，包括特权指令和访问IO的指令。可以完全控制整个计算机系统。</p>
-<p>转换为内核态后，操作系统会识别应用程序发出的系统调用参数、ID号等，并完成具体的服务。</p>
-<p>系统调用和函数调用的区别：</p>
-<p>​	1.函数调用只是在一个栈空间中进行参数的传递，参数的返回</p>
-<p>​	2.系统调用中，应用程序和操作系统内核拥有各自的堆栈。当应用程序发出系统调用后，需要切换堆栈，同时要完成特权转换。</p>
-<p>可见执行系统调用相比于执行函数调用开销要大很多，但是系统调用要可靠得多。</p>
+<h2 id="2-创建本地仓库"><a href="#2-创建本地仓库" class="headerlink" title="2.创建本地仓库"></a>2.创建本地仓库</h2><p>在文件夹下右键git bash here</p>
+<p>运行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>此时会出现master分支，由于GitHub默认分支是main，故使用以下命令将分支改为main</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -M main</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-创建远程仓库"><a href="#3-创建远程仓库" class="headerlink" title="3.创建远程仓库"></a>3.创建远程仓库</h2><p>在GitHub中创建远程仓库，复制ssh链接</p>
+<h2 id="4-关联远程和本地仓库"><a href="#4-关联远程和本地仓库" class="headerlink" title="4.关联远程和本地仓库"></a>4.关联远程和本地仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin  远程仓库的URL</span><br></pre></td></tr></table></figure>
+
+<p>添加远程仓库后，可以使用<code>git branch -a</code>命令查看所有分支，其中<code>-a</code>选项用于显示本地和远程所有分支。</p>
+<h2 id="5-上传代码"><a href="#5-上传代码" class="headerlink" title="5.上传代码"></a>5.上传代码</h2><h3 id="1-将代码添加到暂存区"><a href="#1-将代码添加到暂存区" class="headerlink" title="1.将代码添加到暂存区"></a>1.将代码添加到暂存区</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-将代码添加到本地仓库，写入更新说明"><a href="#2-将代码添加到本地仓库，写入更新说明" class="headerlink" title="2.将代码添加到本地仓库，写入更新说明"></a>2.将代码添加到本地仓库，写入更新说明</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &#x27;更新说明&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-将代码push到远程仓库"><a href="#3-将代码push到远程仓库" class="headerlink" title="3.将代码push到远程仓库"></a>3.将代码push到远程仓库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -316,8 +267,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
               <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
           </div>
 
         
@@ -326,13 +277,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2026/02/03/OS-chapter-2/" rel="prev" title="操作系统笔记-Chapter 2-内存">
-      <i class="fa fa-chevron-left"></i> 操作系统笔记-Chapter 2-内存
+    <a href="/2026/02/04/Paddle%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="prev" title="Paddle二次开发">
+      <i class="fa fa-chevron-left"></i> Paddle二次开发
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2026/02/04/YOLOv5-%E8%BD%A6%E7%89%8C%E5%8F%B7%E6%A3%80%E6%B5%8B-%E9%83%A8%E7%BD%B2%E5%88%B0RK3588%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%B9%B3%E5%8F%B0/" rel="next" title="YOLOv5-车牌号检测-部署到RK3588嵌入式平台">
-      YOLOv5-车牌号检测-部署到RK3588嵌入式平台 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -391,7 +339,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">操作系统的启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E3%80%81%E5%BC%82%E5%B8%B8%E3%80%81%E4%B8%AD%E6%96%AD"><span class="nav-number">2.</span> <span class="nav-text">操作系统的系统调用、异常、中断</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-push%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">Git push文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5-%E8%BF%90%E8%A1%8C%E4%B8%8B%E5%88%97%E5%91%BD%E4%BB%A4%E4%B8%80%E8%B7%AF%E5%9B%9E%E8%BD%A6"><span class="nav-number">1.1.</span> <span class="nav-text">1.生成密钥,运行下列命令一路回车</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">2.创建本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">1.3.</span> <span class="nav-text">3.创建远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">1.4.</span> <span class="nav-text">4.关联远程和本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81"><span class="nav-number">1.5.</span> <span class="nav-text">5.上传代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B0%86%E4%BB%A3%E7%A0%81%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.将代码添加到暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B0%86%E4%BB%A3%E7%A0%81%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%8C%E5%86%99%E5%85%A5%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.将代码添加到本地仓库，写入更新说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%B0%86%E4%BB%A3%E7%A0%81push%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.将代码push到远程仓库</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
