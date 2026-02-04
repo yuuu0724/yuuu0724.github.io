@@ -184,10 +184,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2026-02-03 20:25:01 / Modified: 22:04:55" itemprop="dateCreated datePublished" datetime="2026-02-03T20:25:01+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 20:25:01" itemprop="dateCreated datePublished" datetime="2026-02-03T20:25:01+08:00">2026-02-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-04 10:03:34" itemprop="dateModified" datetime="2026-02-04T10:03:34+08:00">2026-02-04</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="Symbols count in article">
@@ -195,7 +201,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>30</span>
+              <span>24</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -215,148 +221,14 @@
 
       
           <p>这是首页想展示的内容。</p>
-<p>这是不想在首页展示的内容。<br>这是我的内容</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Alaric">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alaric's space">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/02/03/OS-chapter-1/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 1-概论</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:16:58" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="操作系统的启动"><a href="#操作系统的启动" class="headerlink" title="操作系统的启动"></a>操作系统的启动</h2><p><img src="/../images/OS-chapter-1/image-20260203195241791.png" alt="image-20260203195241791"></p>
-<ul>
-<li><p><strong>DISK</strong>：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。</p>
-</li>
-<li><p><strong>BIOS</strong>：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。</p>
-</li>
-<li><p><strong>Bootloader</strong>：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。&#96;&#96;</p>
-</li>
-</ul>
-<p><img src="/../images/OS-chapter-1/image-20260203195259231.png" alt="image-20260203195259231"></p>
-<p><strong>BOIS</strong>会在内存的特定地址开始执行。</p>
-<p>上电之后<strong>BOIS</strong>需要执行的操作：</p>
-<ol>
-<li><strong>POST</strong>（加电自检），检查设备是否能正常工作。</li>
-<li>将<strong>Bootloader</strong>从硬盘放到内存中。</li>
-<li>寻找显卡和执行<strong>BIOS</strong></li>
-</ol>
-<p><img src="/../images/OS-chapter-1/image-20260203195312988.png" alt="image-20260203195312988"></p>
-<p><strong>Bootloader：</strong></p>
-<ul>
-<li>寻找DISK中操作系统的起始扇区和操作系统长度。</li>
-<li>将操作系统对应磁盘块读到内存中。</li>
-<li>将CPU控制权交给OS，跳转到操作系统的起始地址执行。</li>
-</ul>
-<h2 id="操作系统的系统调用、异常、中断"><a href="#操作系统的系统调用、异常、中断" class="headerlink" title="操作系统的系统调用、异常、中断"></a>操作系统的系统调用、异常、中断</h2><p><strong>定义：</strong></p>
-<p>1.系统调用（来源于应用程序）</p>
-<p>​	异步或者同步事件。应用程序主动向操作系统发出服务请求。</p>
-<p>2.异常（来源于不良的应用程序）</p>
-<p>​	同步事件。非法指令或者其他坏的处理状态（如：内存出错），并非程序主动发出的请求。</p>
-<p>3.中断（来源于外设）</p>
-<p>​	异步事件。来自不同硬件设备的计时器和网络中断。</p>
-<p><strong>系统调用、中断和异常的处理机制</strong></p>
-<p><strong>中断：</strong></p>
-<p>​	<strong>硬件：</strong></p>
-<p>​	设置中断标记</p>
-<p>​		1.将内部、外部事件设置中断标记</p>
-<p>​		2.设置中断事件的ID，让操作系统能找到对应的处理程序</p>
-<p>​	<strong>软件</strong>：</p>
-<p>​	1.保存当前的处理状态，当中断服务程序执行完成后回到原来被打断的点。</p>
-<p>​	2.保存完状态后，程序跳转到中断号对应的中断服务程序。</p>
-<p>​	3.清除中断标记</p>
-<p>​	4.恢复原本的处理状态</p>
-<p><strong>异常：</strong></p>
-<p>1.保存现场</p>
-<p>2.异常处理</p>
-<p>​	1.杀死产生异常的程序</p>
-<p>​	2.重新执行异常的程序</p>
-<p>3.恢复现场</p>
-<p><strong>系统调用：</strong></p>
-<p>程序访问只要是通过高层次的API接口而不是直接进行系统调用。Linux，Mac OS等用的是POSIX API，只要遵循这个机制，就可以跨平台使用。</p>
-<p>应用程序会通过Library Code来访问系统调用接口。</p>
-<p>访问到系统调用接口过后会触发操作系统从用户态转换为内核态。</p>
-<p>**用户态：**特权低，无法直接访问特殊的机器指令和IO。</p>
-<p>**内核态：**操作系统运行过程中可以执行任意一条CPU发出的指令，包括特权指令和访问IO的指令。可以完全控制整个计算机系统。</p>
-<p>转换为内核态后，操作系统会识别应用程序发出的系统调用参数、ID号等，并完成具体的服务。</p>
-<p>系统调用和函数调用的区别：</p>
-<p>​	1.函数调用只是在一个栈空间中进行参数的传递，参数的返回</p>
-<p>​	2.系统调用中，应用程序和操作系统内核拥有各自的堆栈。当应用程序发出系统调用后，需要切换堆栈，同时要完成特权转换。</p>
-<p>可见执行系统调用相比于执行函数调用开销要大很多，但是系统调用要可靠得多。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/02/03/hello/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -398,10 +270,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:17:34" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-04 10:04:03" itemprop="dateModified" datetime="2026-02-04T10:04:03+08:00">2026-02-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -449,193 +327,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-地址空间-地址生成"><a href="#2-地址空间-地址生成" class="headerlink" title="2.地址空间&amp;地址生成"></a>2.地址空间&amp;地址生成</h2><h3 id="1-地址空间定义："><a href="#1-地址空间定义：" class="headerlink" title="1.地址空间定义："></a>1.地址空间定义：</h3><p><strong>物理地址空间</strong>：与硬件直接对应，如内存条、硬盘等，其管理和控制由硬件完成。</p>
-<p><strong>逻辑地址空间</strong>：一个程序运行时的地址空间，相较于物理地址空间更简单，需通过操作系统将程序映射到物理地址空间。</p>
-<p><img src="/../images/OS-chapter-2/image-20260203195354784.png" alt="image-20260203195354784"></p>
-<p>c语言和汇编语言都是人能看懂的，不带有地址，而链接文件和可执行文件中包含地址。这些地址都是逻辑地址，知识通过编译器等完成的，还没有经过操作系统。</p>
-<h3 id="2-地址空间的生成"><a href="#2-地址空间的生成" class="headerlink" title="2.地址空间的生成"></a>2.地址空间的生成</h3><p>​	CPU 内部包含一个 <strong>内存管理单元 (MMU)</strong>，它负责将程序运行时产生的 <strong>逻辑地址 (Logical Address)</strong> 实时转换成内存中的 <strong>物理地址 (Physical Address)</strong>。</p>
-<p>​	当 CPU 需要执行一条指令时，它会向 MMU 发出逻辑地址。MMU 通过查询由操作系统维护的 <strong>页表 (Page Table)</strong> 或 <strong>段表 (Segment Table)</strong> 等映射机制，找到该逻辑地址对应的物理地址。</p>
-<p>​	获取到物理地址后，<strong>CPU 控制器</strong>（或总线接口单元）会通过 <strong>系统总线</strong> 向 <strong>主存储器 (Main Memory)</strong> 发送请求，请求获取该物理地址处存储的内容（即待执行的指令或数据）。</p>
-<p>​	主存接收到请求后，将相应物理地址的内容通过总线传输回 CPU。CPU 接收到指令后，便开始执行。</p>
-<p>​	<strong>操作系统 (OS)</strong> 在整个过程中扮演的关键角色是 <strong>建立和维护</strong> 这种逻辑地址到物理地址的 <strong>映射关系</strong>，确保每个进程都能安全、独立地访问其所需的内存空间。</p>
-<h2 id="3-连续内存分配"><a href="#3-连续内存分配" class="headerlink" title="3.连续内存分配"></a>3.连续内存分配</h2><h3 id="1-内存碎片"><a href="#1-内存碎片" class="headerlink" title="1.内存碎片"></a>1.内存碎片</h3><p>给运行的程序分配空间之后，会出现一些无法利用的空闲空间。</p>
-<p><strong>内碎片</strong>：分配单元之内使用的剩余内存空间。</p>
-<p><strong>外碎片</strong>：分配单元之间未使用的内存空间</p>
-<h3 id="2-动态分配"><a href="#2-动态分配" class="headerlink" title="2.动态分配"></a>2.动态分配</h3><p>操作系统把程序加载到内存中去，也就是在内存中分配一块连续的区域，让程序能成功运行。</p>
-<p>程序运行时需要访问数据，操作系统需要给数据分配地址空间。</p>
-<p><strong>分配策略</strong>：</p>
-<ul>
-<li><p>首次分配</p>
-</li>
-<li><p>最优分配</p>
-</li>
-<li><p>最差适配</p>
-</li>
-</ul>
-<p>**首次适配：**按顺序从第一个空闲内存块开始找</p>
-<p><img src="/../images/OS-chapter-2/image-20260203195421918.png" alt="image-20260203195421918"></p>
-<ul>
-<li>将空闲块按地址排序</li>
-<li>寻找第一个合适的分区</li>
-</ul>
-<p>优点：简单、易于产生大的空闲块</p>
-<p>缺点：容易产生外部碎片</p>
-<p>**最优适配：**寻找整个地址空间中，最满足分配请求的空间块</p>
-<p><img src="/../images/OS-chapter-2/image-20260203195437829.png" alt="image-20260203195437829"></p>
-<ul>
-<li>按尺寸排列空闲块列表</li>
-<li>寻找最适合的分区</li>
-</ul>
-<p>优点：当分配是小尺寸是非常有效</p>
-<p>缺点：容易产生微小的外部碎片</p>
-<p>**最差适配：**寻找整个地址空间中，与分配需求差距最大的地址空间</p>
-<p><img src="/../images/OS-chapter-2/image-20260203195449822.png" alt="image-20260203195449822"></p>
-<ul>
-<li>按尺寸排列空闲块的列表</li>
-<li>寻找最大的分区</li>
-</ul>
-<p>优点：分配中等尺寸效果最好</p>
-<p>缺点：外部碎片、容易破坏打的空闲块以至于大空闲块无法被分配。</p>
-<h3 id="3-压缩式与交换式碎片整理"><a href="#3-压缩式与交换式碎片整理" class="headerlink" title="3.压缩式与交换式碎片整理"></a>3.压缩式与交换式碎片整理</h3><p>由于无论采用什么算法都会产生一定的内碎片和外碎片，故需要一个处理方法使得碎片尽量的少。</p>
-<p><strong>处理方法</strong>：</p>
-<ul>
-<li>压缩式碎片整理</li>
-<li>交换式碎片整理</li>
-</ul>
-<p><strong>压缩式碎片整理</strong>：调整程序位置，合并未使用的空间</p>
-<p><img src="/../images/OS-chapter-2/image-20260203195507911.png" alt="image-20260203195507911"></p>
-<p><strong>交换式碎片整理：</strong></p>
-<p>充分利用硬盘。当程序快把内存空间占满时，没有多余空闲空间，无法使用压缩式整理碎片。此时把硬盘当作备份。</p>
-<p>问题：①把哪个程序换到硬盘？②什么时候进行换入换出？</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Alaric">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alaric's space">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/02/03/OS-chapter-3/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 3-非连续内存</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:18:20" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。</p>
-<p><strong>非连续内存分配管理方法</strong>：（硬件方法）</p>
-<ul>
-<li>分段</li>
-<li>分页（用得多）</li>
-</ul>
-<h2 id="1-分段（Segmentation）"><a href="#1-分段（Segmentation）" class="headerlink" title="1.分段（Segmentation）"></a>1.分段（Segmentation）</h2><p><strong>1.程序的分段地址空间</strong></p>
-<p>把程序的代码、数据等分段，分散到多个物理空间。这种方式虽然让程序在逻辑地址上连续，但是在物理地址上是分开的。</p>
-<p><img src="/../images/OS-chapter-3/image-20251204100228758.png" alt="image-20251204100228758"></p>
-<p><strong>2.分段寻址方案</strong></p>
-<p> 应用程序的地址是一维的逻辑地址。一维的逻辑地址需要和物理地址对应。</p>
-<p>一维逻辑地址由不同的段组成，将一维的地址分为两块，一块是段寻址，一块是段内偏移寻址。</p>
-<p>如果段号和段内偏移是分开的两个地址，则称为段寄存器+地址寄存器实现方案。如果合在一起，则称为单地址实现方案。</p>
-<p><img src="/../images/OS-chapter-3/image-20251204101138549.png" alt="image-20251204101138549"></p>
-<p><img src="/../images/OS-chapter-3/image-20251204101440168.png" alt="image-20251204101440168"></p>
-<p><strong>段表中存放着逻辑地址与物理地址的映射关系和段的起始地址以及长度。</strong></p>
-<p>当通过段号寻址到物理内存中的起始地址之后，CPU会比对该地址是否满足段表的限制（起始地址和长度），若不满足限制，说明超出了访问范围。</p>
-<h2 id="2-分页（Paging）"><a href="#2-分页（Paging）" class="headerlink" title="2.分页（Paging）"></a>2.分页（Paging）</h2><p><strong>1.分页地址空间</strong></p>
-<p>通过2的幂来划分物理内存至固定大小的帧，逻辑机制空间应该和物理地址空间具有相同大小的页。</p>
-<p>注意：物理页称作帧，逻辑页称作页。</p>
-<p><strong>帧</strong>：（frame）</p>
-<p>假设每一帧有S个字节，那么帧内偏移就有S位。</p>
-<p><img src="/../images/OS-chapter-3/image-20251204112128892.png" alt="image-20251204112128892"></p>
-<p>地址计算的实例：有16bit的地址空间，9bit大小的页帧，假设物理地址的帧号是3，偏移地址是6，求实际的物理地址。</p>
-<p>​	9bit大小的页帧，则偏移量有2^9&#x3D;512byte。</p>
-<p>根据公式：物理地址&#x3D;2^9 * 3 + 6&#x3D; 1542</p>
-<p><strong>页</strong>：（page）</p>
-<p>一个程序的逻辑地址被划分为大小相等的页</p>
-<p>页内偏移的大小等于帧内偏移的大小</p>
-<p>页的大小和页帧大小一样</p>
-<p>页号的大小不一定等于帧号大小</p>
-<p><img src="/../images/OS-chapter-3/image-20251204135108338.png" alt="image-20251204135108338"></p>
-<p><strong>2.页寻址方案</strong></p>
-<p>程序运行时，CPU先寻址（逻辑地址），针对逻辑地址的页号部分，查询页表中对应页号的帧号，从而映射到物理地址。 </p>
-<h2 id="3-页表（Page-Table）"><a href="#3-页表（Page-Table）" class="headerlink" title="3.页表（Page Table）"></a>3.页表（Page Table）</h2><p>可以简单理解为页表就是个大数组。</p>
-<p>页表的索引指的是page number，即页号。</p>
-<p>索引所对应页表项中存放着frame number。</p>
-<p>CPU先查询页表的起始地址，查询page number算出index，再寻址到对应的页表项，从而取出frame number，frame number叠加上offset就形成了物理地址。</p>
-<p>页表项除存放frame number以外还会存一些bit，这些bit可以用于表示页表项是否合法（对应物理页是否存在）。</p>
-<p>逻辑地址空间大小不一，有可能有一部分逻辑地址空间并没有对应到物理地址空间。</p>
-<p><img src="/../images/OS-chapter-3/image-20251215142205802.png" alt="image-20251215142205802"></p>
-<p><strong>地址转换</strong></p>
-<p>​	CPU先找逻辑地址，查找 (4,0) ，从低往高第五个页表，偏移量为0。查询到该页表项中有标志位和相应的帧号，帧号为00000，标志位为100。标志位的第二项就是上文所说的bit，0表示不存在对应的物理地址，反之1表示存在。可见逻辑地址 (4,0) 所对应的物理地址不存在，如果CPU访问到这个地址空间就会发出异常。</p>
-<p>​	再查找 (3，1023) 这个逻辑地址，从低往高第四个页表，偏移量为1023。CPU查询到对应的标志位和帧号分别为 011 00100。说明对应物理地址存在，并且对应到物理地址中的页帧号是4。物理地址中从低到高第五个页表，并且页帧的偏移量与页的偏移量同为1023。成功对应上了物理地址。</p>
-<p><img src="/../images/OS-chapter-3/image-20251215143615405.png" alt="image-20251215143615405"></p>
-<p><strong>分页机制的性能问题</strong></p>
-<p>​	访问一个内存单元需要进行两次内存访问，一次获取页表项，一次用于访问数据。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/02/03/OS-chapter-2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -677,10 +376,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 20:30:03" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-04 10:04:17" itemprop="dateModified" datetime="2026-02-04T10:04:17+08:00">2026-02-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -722,28 +427,215 @@
 <li>将暂时不能运行的程序放到内存外，从而获得更多空闲内存</li>
 <li>把一个进程的整个地址空间的内容保存到外存（换出），将外存中的某一个进程地址空间读入到内存中（换入）。</li>
 </ul>
-<h2 id="2-虚存技术"><a href="#2-虚存技术" class="headerlink" title="2.虚存技术"></a>2.虚存技术</h2><p>在内存不够用时，可以采用覆盖技术和交换技术，但是：</p>
-<ul>
-<li><strong>覆盖技术</strong>需要程序员把整个程序划分成若干个小的功能模块，并确定各模块的覆盖关系，增加了程序员的负担</li>
-<li><strong>交换技术</strong>以进程作为交换单元，需要把进程的整个地址空间都换入换出，增加了处理器开销</li>
-</ul>
-<p>因此引入虚拟内存技术：</p>
-<p>虚存技术能够同时拥有前两个技术的功能：可以像覆盖技术那样不将所有内容都放在内存，但由操作系统自己来完成覆盖操作，无需程序员干涉；也可以像交换技术那样实现进程在内存外存之间的交换，但只对进程的部分内容进行交换。</p>
-<p><strong>虚拟页式内存管理</strong></p>
-<ul>
-<li><p>大部分虚拟存储系统都采用虚拟页式存储管理技术，即在页式存储管理的基础上，增加请求调页和页面置换功能。</p>
-</li>
-<li><p>在运行过程中，如果发现要运行的程序或者要访问的数据不在内存中，则向系统发出缺页中断请求（请求调页），系统在处理这个中断时，会根据中断异常产生的地址将外存中相应的页面调入内存，使得该程序能继续运行。</p>
-</li>
-</ul>
-<p>为实现调页和页面置换，需要在页表项中增加4个位来辅助：</p>
-<ul>
-<li><strong>驻留位（存在位）</strong>：决定访问的数据是否在内存中。为1表示该页当前在内存中，即该表是有效的，可以使用；为1表示该页还在外存中，如果访问到此页，将会出现缺页中断。</li>
-<li><strong>保护位</strong>：表示允许对该页做何种类型的访问，如只读、读写、可执行。</li>
-<li><strong>修改位</strong>：表示该页是否被修改过。当进行换入换出时，根据此位来决定是否把它的内存写回外存，即不一致时需要更新。</li>
-<li><strong>访问位</strong>：如果该页面被访问过，则设置此位。用于页面置换算法，如果不常被访问，则会被置换到外存。</li>
-</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/02/03/OS-chapter-4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alaric">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alaric's space">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/02/03/OS-chapter-3/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 3-非连续内存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-04 10:04:11" itemprop="dateModified" datetime="2026-02-04T10:04:11+08:00">2026-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。</p>
+<p><strong>非连续内存分配管理方法</strong>：（硬件方法）</p>
+<ul>
+<li>分段</li>
+<li>分页（用得多）</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/02/03/OS-chapter-3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://iamalaric.us.kg/2026/02/03/OS-chapter-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Alaric">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alaric's space">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/02/03/OS-chapter-1/" class="post-title-link" itemprop="url">操作系统笔记-Chapter 1-概论</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-04 10:03:46" itemprop="dateModified" datetime="2026-02-04T10:03:46+08:00">2026-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="操作系统的启动"><a href="#操作系统的启动" class="headerlink" title="操作系统的启动"></a>操作系统的启动</h2><p><img src="/../images/OS-chapter-1/image-20260203195241791.png" alt="image-20260203195241791"></p>
+<ul>
+<li><p><strong>DISK</strong>：存放OS和Bootloader。一开始操作系统并不是直接放入内存里面，而是放到硬盘当中，由BIOS来提供支持。</p>
+</li>
+<li><p><strong>BIOS</strong>：基本IO处理系统。计算机开机之后，让计算机系统检测各种外设，让OS加载相应软件。</p>
+</li>
+<li><p><strong>Bootloader</strong>：加载OS，把OS从硬盘放到内存中，使得CPU能够执行操作系统。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/02/03/OS-chapter-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

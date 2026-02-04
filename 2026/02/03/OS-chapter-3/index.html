@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"iamalaric.us.kg","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。 非连续内存分配管理方法：（硬件方法）  分段 分页（用得多）  1.分段（Segmentation）1.程序的分段地址空间 把程序的代码、数据等分段，分散到多个物理空间。这种方式虽然让程序在逻辑地址上连续，但是在物理地址上是分开的。  2.分段寻址方案  应用程序的地址是一维的逻辑地址。一维的逻辑地址需要和物理地址对">
+  <meta name="description" content="连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。 非连续内存分配管理方法：（硬件方法）  分段 分页（用得多）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统笔记-Chapter 3-非连续内存">
 <meta property="og:url" content="https://iamalaric.us.kg/2026/02/03/OS-chapter-3/index.html">
 <meta property="og:site_name" content="Alaric&#39;s space">
-<meta property="og:description" content="连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。 非连续内存分配管理方法：（硬件方法）  分段 分页（用得多）  1.分段（Segmentation）1.程序的分段地址空间 把程序的代码、数据等分段，分散到多个物理空间。这种方式虽然让程序在逻辑地址上连续，但是在物理地址上是分开的。  2.分段寻址方案  应用程序的地址是一维的逻辑地址。一维的逻辑地址需要和物理地址对">
+<meta property="og:description" content="连续内存分配存在内存利用率低、容易产生内碎片外碎片等缺点，故引入非连续内存分配。 非连续内存分配管理方法：（硬件方法）  分段 分页（用得多）">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-3/image-20251204100228758.png">
 <meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-3/image-20251204101138549.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-3/image-20251215142205802.png">
 <meta property="og:image" content="https://iamalaric.us.kg/images/OS-chapter-3/image-20251215143615405.png">
 <meta property="article:published_time" content="2026-02-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-02-03T13:18:20.032Z">
+<meta property="article:modified_time" content="2026-02-04T02:04:11.571Z">
 <meta property="article:author" content="Alaric">
 <meta property="article:tag" content="操作系统">
 <meta property="article:tag" content="笔记">
@@ -198,10 +198,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2026-02-03 00:00:00 / Modified: 21:18:20" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
+              <time title="Created: 2026-02-03 00:00:00" itemprop="dateCreated datePublished" datetime="2026-02-03T00:00:00+08:00">2026-02-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-04 10:04:11" itemprop="dateModified" datetime="2026-02-04T10:04:11+08:00">2026-02-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -250,6 +256,8 @@
 <li>分段</li>
 <li>分页（用得多）</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="1-分段（Segmentation）"><a href="#1-分段（Segmentation）" class="headerlink" title="1.分段（Segmentation）"></a>1.分段（Segmentation）</h2><p><strong>1.程序的分段地址空间</strong></p>
 <p>把程序的代码、数据等分段，分散到多个物理空间。这种方式虽然让程序在逻辑地址上连续，但是在物理地址上是分开的。</p>
 <p><img src="/../images/OS-chapter-3/image-20251204100228758.png" alt="image-20251204100228758"></p>
@@ -310,12 +318,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2026/02/03/OS-chapter-4/" rel="prev" title="操作系统笔记-Chapter 4-虚拟内存">
-      <i class="fa fa-chevron-left"></i> 操作系统笔记-Chapter 4-虚拟内存
+    <a href="/2026/02/03/OS-chapter-1/" rel="prev" title="操作系统笔记-Chapter 1-概论">
+      <i class="fa fa-chevron-left"></i> 操作系统笔记-Chapter 1-概论
     </a></div>
       <div class="post-nav-item">
-    <a href="/2026/02/03/OS-chapter-2/" rel="next" title="操作系统笔记-Chapter 2-内存">
-      操作系统笔记-Chapter 2-内存 <i class="fa fa-chevron-right"></i>
+    <a href="/2026/02/03/OS-chapter-4/" rel="next" title="操作系统笔记-Chapter 4-虚拟内存">
+      操作系统笔记-Chapter 4-虚拟内存 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
